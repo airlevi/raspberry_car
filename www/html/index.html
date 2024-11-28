@@ -1,0 +1,104 @@
++<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" >
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css_demo/app.css"/>
+    
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9xAi4sIDVbgPrvDeGFGli4jNmoU9PGEs"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--百度图表Echart-->
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script> 
+    <script type="text/javascript"src="//api.map.baidu.com/api?v=2.0&ak=DTmrdMUMb9Xmy7123HRT7ZzVnyfAVyvi"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.is"></script>
+    <title>raspberry pi web</title>    	
+</head>
+<body style="overflow-x:hidden;overflow-y:auto">
+    <header>
+        <div class="container-fluid head">
+            <div class="row  align-items-center">
+                <div class="col head_log"></div>
+                <div class="col head_title">树莓派物联网监测系统</div>
+                <div class=" col"></div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid ">
+        <nav>
+            <div id="nav_title"><b>功能导航栏</b><i class="fa fa-navicon"></i></div><hr>
+            <!-- Nav tabs -->
+            <ul id="nav" class="nav nav-tabs col-10" role="tablist">
+                <li class="nav-item real-time-data-label">
+                    <a class="nav-link active" data-toggle="tab" href="#home"><i class="fa fa-refresh fa-spin fa-fw"></i>实时监测图表</a>
+                </li>
+                <li class="nav-item raspberrypi-control-center">
+                    <a class="nav-link" data-toggle="tab" href="#raspberrypi"><i class="fa fa-desktop fa-fw"></i>远程控制</a>
+                </li>
+                <li class="nav-item pi-dashboard">
+                    <a class="nav-link" data-toggle="tab" href="#pidashboard"><i class="fa fa-pie-chart fa-fw"></i>树莓派运行状态</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="home" class="container-fluid tab-pane active">
+                <div class="container-fluid" id="map">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-10 " id="allmap"></div>
+                        <div class="col"></div>
+                    </div>   
+                </div>
+                <div class="container first_view">
+                    <div class="row justify-content-center align-items-center" id="nowchart" ></div>
+                </div>  
+            </div>
+            <div id="raspberrypi" class="container tab-pane fade">
+                <div class="card car">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <span><i class="fa fa-circle-o-notch fa-spin"></i>树莓派摄像头实时监控：</span><span id= "movenode"></span><br>
+                                <div class="camerawindow"></div>
+                            </div>
+                        </div>
+                        <div class="link-left"></div>
+                        <div class="col">
+                            <div>
+                                <span><i class="fa fa-arrows"></i>树莓派小车运动控制：</span><br><br>
+                                <div class="directionwindow"></div>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6" id="cameracontrol"></div>
+                        <div class="col-6" id="directioncontrol"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="pidashboard" class="container tab-pane fade"></div>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+</body>
+</html>
+<script src="./js_demo/app.js"></script>
+
+
+
+
+
